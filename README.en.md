@@ -230,4 +230,5 @@ All numeric criteria in the book (3-point stops, 5-point swings, 15–20 turnove
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT)
+[MIT](./LICENSE)
+
