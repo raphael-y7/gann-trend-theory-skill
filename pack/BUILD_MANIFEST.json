@@ -1,0 +1,50 @@
+{
+  "tool": "cangjie-tools v2.5.0",
+  "published_hashes": {
+    "accumulation-distribution-skill\\SKILL.md": "f4bff4ebd374ebba4b7e9c4f1a1675581782ee32884796b1236b962c528deb54",
+    "capability-destinations.json": "c5cbb33cc9f2ff617a2f12d7723839c650608db38f65de71ccfd5dd0adc5a21f",
+    "entry-exit-timing-skill\\SKILL.md": "db5017d11e882ef61a17d2b90dfdb59ef6fa92d0eb31f32e0ebcb150f215fd4d",
+    "failure-mode-triage-skill\\SKILL.md": "ebc7fd43c1f0066d4f9c41fc4f69dad74a08164904a84543c929d0c7db1eb053",
+    "gann-trend-theory-skill-router\\references\\capabilities\\accumulation-distribution-skill.md": "81d7415c50e6e1c4c101930b3eb4bfff396f97af5713523e6f5d9a51da3d1de4",
+    "gann-trend-theory-skill-router\\references\\capabilities\\entry-exit-timing-skill.md": "b206ef1e2ba1822e1c09639c9f2a6dd25a9cfb94239a2a977806cfef411fe2be",
+    "gann-trend-theory-skill-router\\references\\capabilities\\failure-mode-triage-skill.md": "f9984546f403b70539ae6b906549d5312a1f14972c4fea0c94b501b5616b6a0b",
+    "gann-trend-theory-skill-router\\references\\capabilities\\news-discounting.md": "67a2e538c565bcf4e5ee3b78b6557a6760ea5878b6849d6ffdfa711e612e6aee",
+    "gann-trend-theory-skill-router\\references\\capabilities\\portfolio-annual-checkup.md": "9cd219ed77489ea530ff3aabd7cf4c53474867dfd34c6e4026ad638b9f76f4f0",
+    "gann-trend-theory-skill-router\\references\\capabilities\\pyramid-scaling.md": "7f13c9fb1b8790e8b913e925ca98927876e5c0fb3da5380b0d34c663c78adc86",
+    "gann-trend-theory-skill-router\\references\\capabilities\\seven-action-zones.md": "2c3e989a2a700062b235a96c1f28decd7ba51860095ecf582c4a65b995b838c6",
+    "gann-trend-theory-skill-router\\references\\capabilities\\strength-based-selection-skill.md": "e922653c947e1f917488fe156f738f2b096d5d5bb263bb04f8e04ba9a52008a5",
+    "gann-trend-theory-skill-router\\references\\capabilities\\support-resistance-stops-skill.md": "724d8b2b60c9c367878c335c5400df656f17b1f6aa5b6ebca3c3d151a2208bd6",
+    "gann-trend-theory-skill-router\\references\\capabilities\\tape-review-workflow.md": "f6bb876731ba6049fe40b4b9370a7b570ccecf6a714655b35c9433a11e2797fb",
+    "gann-trend-theory-skill-router\\references\\capabilities\\trend-judgment-skill.md": "c97b24f736501b1d8eacd292fd001148a0be98fd18e89acdbaf25f0328c6d9ab",
+    "gann-trend-theory-skill-router\\references\\capabilities\\twelve-trading-rules-skill.md": "2c42c7233a01282f2a8b79a572585c20aa2d489e6091bc888892c581a0854c5b",
+    "gann-trend-theory-skill-router\\references\\capability-index.md": "3c1b55e66323d172e37701da42b4e4b8f54787cef23e608aa7ec7157094e133e",
+    "gann-trend-theory-skill-router\\references\\cheatsheet.md": "fc7182e1252d82b617d689581bc326745afa65b1492b2283c7f02d2733055b2b",
+    "gann-trend-theory-skill-router\\references\\glossary.md": "c4782ca8699e5c7aa8801a6de9164b2514149ffcd4cd636fe7a9b876b2d5fc2d",
+    "gann-trend-theory-skill-router\\references\\overview.md": "64c34eef7afc6714ac974fddadd79ecea35d4b42efd76879ea8f5ff36f12a611",
+    "gann-trend-theory-skill-router\\SKILL.md": "a5b8e2f5339c11bd2e77585684c6109ba0844b11a88594161f9212dfb216d13a",
+    "strength-based-selection-skill\\SKILL.md": "b6ad2e36de8273bb1b349bd23cf19e2d9a05e83a468f0025cd2b91fe308cc483",
+    "support-resistance-stops-skill\\SKILL.md": "d3d787d1418e0f74e363abb6dc0ee20b1a6f57a45f3d6f2d8ba41a16d1a9ceb1",
+    "trend-judgment-skill\\SKILL.md": "69d7cc500c19567c99d5df4a9d8931cb98f4ebb6bf8616ac0f02a89a1c753cb7",
+    "twelve-trading-rules-skill\\SKILL.md": "e931860a27f7c4faf31af8995beab25059661b58880d5181a7e9f45b60553ccb"
+  },
+  "note": "update/重编译前比对 published_hashes；检测到本地手改不得静默覆盖",
+  "bundle_id": "bundle.gann-trend-theory-skill",
+  "bundle_sha256": "736da962c87480e9110ea2b00c508cb3eb2265b79d8e5d0bbeed56b38c2616dd",
+  "variant": "pack",
+  "run_id": "run-20261012-014737-f94afb",
+  "decision": {
+    "schema_version": 1,
+    "requested": "pack",
+    "selected": "pack",
+    "decision_policy": "single-first-v1",
+    "skill_budget": 8,
+    "promoted_count": 7,
+    "capability_count": 12,
+    "reasons": [
+      "用户显式选择 pack，auto 决策器不覆盖用户选择"
+    ],
+    "alternative": "single（1 个入口 + 12 张内部能力卡）",
+    "user_confirmed": true,
+    "preserve_strategy_on_update": true
+  }
+}

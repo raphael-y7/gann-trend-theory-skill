@@ -1,0 +1,57 @@
+{
+  "generated_by": "cangjie-tools v2.5.0",
+  "bundle_id": "bundle.gann-trend-theory-skill",
+  "router_entrypoint": "gann-trend-theory-skill-router",
+  "entrypoint_count": 8,
+  "capability_count": 12,
+  "destinations": {
+    "cap.gann-trend-theory-skill.trend-judgment-skill": {
+      "promoted_to": "trend-judgment-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/trend-judgment-skill.md"
+    },
+    "cap.gann-trend-theory-skill.support-resistance-stops-skill": {
+      "promoted_to": "support-resistance-stops-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/support-resistance-stops-skill.md"
+    },
+    "cap.gann-trend-theory-skill.accumulation-distribution-skill": {
+      "promoted_to": "accumulation-distribution-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/accumulation-distribution-skill.md"
+    },
+    "cap.gann-trend-theory-skill.seven-action-zones": {
+      "served_by": "gann-trend-theory-skill-router",
+      "card": "gann-trend-theory-skill-router/references/capabilities/seven-action-zones-skill.md"
+    },
+    "cap.gann-trend-theory-skill.strength-based-selection-skill": {
+      "promoted_to": "strength-based-selection-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/strength-based-selection-skill.md"
+    },
+    "cap.gann-trend-theory-skill.twelve-trading-rules-skill": {
+      "promoted_to": "twelve-trading-rules-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/twelve-trading-rules-skill.md"
+    },
+    "cap.gann-trend-theory-skill.pyramid-scaling": {
+      "served_by": "gann-trend-theory-skill-router",
+      "card": "gann-trend-theory-skill-router/references/capabilities/pyramid-scaling-skill.md"
+    },
+    "cap.gann-trend-theory-skill.entry-exit-timing-skill": {
+      "promoted_to": "entry-exit-timing-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/entry-exit-timing-skill.md"
+    },
+    "cap.gann-trend-theory-skill.news-discounting": {
+      "served_by": "gann-trend-theory-skill-router",
+      "card": "gann-trend-theory-skill-router/references/capabilities/news-discounting-skill.md"
+    },
+    "cap.gann-trend-theory-skill.tape-review-workflow": {
+      "served_by": "gann-trend-theory-skill-router",
+      "card": "gann-trend-theory-skill-router/references/capabilities/tape-review-workflow-skill.md"
+    },
+    "cap.gann-trend-theory-skill.failure-mode-triage-skill": {
+      "promoted_to": "failure-mode-triage-skill",
+      "router_view": "gann-trend-theory-skill-router/references/capabilities/failure-mode-triage-skill.md"
+    },
+    "cap.gann-trend-theory-skill.portfolio-annual-checkup": {
+      "served_by": "gann-trend-theory-skill-router",
+      "card": "gann-trend-theory-skill-router/references/capabilities/portfolio-annual-checkup-skill.md"
+    }
+  }
+}
