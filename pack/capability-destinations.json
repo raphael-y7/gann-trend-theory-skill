@@ -19,7 +19,7 @@
     },
     "cap.gann-trend-theory-skill.seven-action-zones": {
       "served_by": "gann-trend-theory-skill-router",
-      "card": "gann-trend-theory-skill-router/references/capabilities/seven-action-zones-skill.md"
+      "card": "gann-trend-theory-skill-router/references/capabilities/seven-action-zones.md"
     },
     "cap.gann-trend-theory-skill.strength-based-selection-skill": {
       "promoted_to": "strength-based-selection-skill",
@@ -31,7 +31,7 @@
     },
     "cap.gann-trend-theory-skill.pyramid-scaling": {
       "served_by": "gann-trend-theory-skill-router",
-      "card": "gann-trend-theory-skill-router/references/capabilities/pyramid-scaling-skill.md"
+      "card": "gann-trend-theory-skill-router/references/capabilities/pyramid-scaling.md"
     },
     "cap.gann-trend-theory-skill.entry-exit-timing-skill": {
       "promoted_to": "entry-exit-timing-skill",
@@ -39,11 +39,11 @@
     },
     "cap.gann-trend-theory-skill.news-discounting": {
       "served_by": "gann-trend-theory-skill-router",
-      "card": "gann-trend-theory-skill-router/references/capabilities/news-discounting-skill.md"
+      "card": "gann-trend-theory-skill-router/references/capabilities/news-discounting.md"
     },
     "cap.gann-trend-theory-skill.tape-review-workflow": {
       "served_by": "gann-trend-theory-skill-router",
-      "card": "gann-trend-theory-skill-router/references/capabilities/tape-review-workflow-skill.md"
+      "card": "gann-trend-theory-skill-router/references/capabilities/tape-review-workflow.md"
     },
     "cap.gann-trend-theory-skill.failure-mode-triage-skill": {
       "promoted_to": "failure-mode-triage-skill",
@@ -51,7 +51,7 @@
     },
     "cap.gann-trend-theory-skill.portfolio-annual-checkup": {
       "served_by": "gann-trend-theory-skill-router",
-      "card": "gann-trend-theory-skill-router/references/capabilities/portfolio-annual-checkup-skill.md"
+      "card": "gann-trend-theory-skill-router/references/capabilities/portfolio-annual-checkup.md"
     }
   }
 }

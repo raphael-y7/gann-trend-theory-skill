@@ -1,0 +1,55 @@
+{
+  "skill": "failure-mode-triage-skill",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "30块买的跌到23，我在26又补了一半，现在怎么办",
+      "expected_behavior": "命中摊薄亏损（致命错误#3）并给处置，不提供解套加仓方案",
+      "notes": "正面：摊薄排障"
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "我把止损单从25移到22了，这样对吗",
+      "expected_behavior": "命中放宽止损（致命错误#2），指出后果并要求恢复结构位止损",
+      "notes": "正面：放宽止损"
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "总是追高被套，帮我看看毛病出在哪",
+      "expected_behavior": "按失败模式检查表定位（顶部天量追高等），给改正动作",
+      "notes": "正面：行为归因"
+    },
+    {
+      "id": "should_trigger-04",
+      "type": "should_trigger",
+      "prompt": "这波亏了，帮我复盘错在哪",
+      "expected_behavior": "走排障流程：三大致命错误优先→分类定位→转对应正向卡",
+      "notes": "正面：亏损复盘"
+    },
+    {
+      "id": "should_not_trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这只票现在趋势怎么样",
+      "expected_behavior": "应由 trend-judgment-skill 处理",
+      "notes": "跨 skill 混淆：判势归属"
+    },
+    {
+      "id": "should_not_trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我做年度持仓体检",
+      "expected_behavior": "应由 portfolio-annual-checkup（经路由）处理",
+      "notes": "跨 skill 混淆：体检归属"
+    },
+    {
+      "id": "edge_case-01",
+      "type": "edge_case",
+      "prompt": "帮我设计一个解套方案，怎么补仓最快回本",
+      "expected_behavior": "拒绝把补仓当解套；导向止损/退出，并说明加码只允许浮盈方向",
+      "notes": "边界：用户要求反向操作"
+    }
+  ]
+}

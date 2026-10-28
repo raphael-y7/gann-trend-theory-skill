@@ -2,31 +2,29 @@
 
 <p align="center"><a href="README.md">中文</a> | English</p>
 
-An AI skill pack for immediate use — it distills the trend-reading and trade-operating system of *Gann Trend Theory* into 12 capability cards that can be triggered individually or combined.
+An AI skill pack for immediate use — it distills the operating system in William D. Gann's *New Stock Trend Detector*: review old highs and lows with monthly/weekly/daily movement charts, volume and time, judge the trend and whether a range is accumulation or distribution, then control risk with stop orders, capital management and pyramid scaling. The result is 12 capability cards that can be triggered individually or combined.
 
 It is not a book summary, nor a reading response — it breaks the reusable methodology in the book into skill modules that can be triggered, executed and tested.
 
 ## What these skills solve
 
-- Monthly says up, weekly says down, daily just jumped — you cannot tell which timeframe to trust, nor how to actually line up "higher tops and higher bottoms" on a chart
-- A stock has been range-bound for months and you cannot tell accumulation from distribution; you look at absolute volume without dividing by shares outstanding and mistake a dead tape for abandonment
-- Your stop is placed by feel, not anchored to a structural level; you do not know whether to trail it after a profit, or what condition allows re-entry after being stopped out
-- A fresh new high: chase it or not, and is it a false breakout? A long narrow range suddenly breaks out on volume and you cannot judge whether a major move is starting
-- Position size has no fixed risk budget, so you average down when wrong; when in profit you want to add but do not know how a pyramid should taper or when adding is forbidden
-- Good news arrives and the stock falls, a dividend is raised, shares are issued — you cannot read any of it; after a loss you can only say "my mindset was bad" and never reach a named failure mode
+- A stock has moved sideways for months and you cannot tell accumulation from distribution, so you wait for the breakout and buy into what turns out to be distribution
+- You know you "need a stop" but cannot say where it goes or how wide it should be; after being stopped out once you dare not re-enter, and you do not know what condition would justify it
+- Monthly, weekly and daily signals contradict each other and you do not know which timeframe to trust; you dare not chase a new high for fear of a false breakout, and you fear missing the main move
+- You hold a list of candidates, cannot rank which one to buy first, and cannot decide whether to sell the weak ones for the strong ones
+- Good news arrives and the stock falls; you cannot decide whether to trust the news or the chart. After a sudden shock gaps the stock down, you do not know whether to act that day
+- After a loss you can only conclude "my mindset was bad", cannot name the rule you broke, and repeat it next time
 
 ## What was distilled
 
-12 capability cards (each slug maps to `references/capabilities/<slug>-skill.md`), organized in the order "judge direction first, fix location second, manage money and discipline last":
+12 capability cards, organized in the order "judge the trend first, locate the level second, manage the money last". 7 of them become standalone skills in the pack build; the other 5 stay inside the router entry and are loaded on demand:
 
-- **Trend and range character**: `trend-judgment` (multi-timeframe charts, progressive highs/lows, breaking into a new range), `seven-action-zones` (locating price across the seven action zones), `accumulation-distribution` (accumulation vs distribution across volume × range × time)
-- **Key levels and risk control**: `support-resistance-stops` (reviewing support/resistance and the stop system)
-- **Selection**: `strength-based-selection` (relative strength and stock selection)
-- **Position sizing and adding**: `twelve-trading-rules` (the twelve trading rules and capital management), `pyramid-scaling` (pyramid scaling)
-- **Timing and news**: `entry-exit-timing` (entry/exit levels and timing), `news-discounting` (discounting news)
-- **Review, triage and checkup**: `tape-review-workflow` (daily record and weekly review workflow), `failure-mode-triage` (failure-mode triage checklist), `portfolio-annual-checkup` (annual portfolio checkup)
+- **Trend and location** (4 cards): `trend-judgment-skill` (multi-timeframe charts, progressive highs and lows, breaks of old levels), `support-resistance-stops-skill` (support/resistance review and the stop-loss system), `accumulation-distribution-skill` (accumulation/distribution across volume × range × time), `seven-action-zones` (locating the seven action zones)
+- **Selection and timing** (2 cards): `strength-based-selection-skill` (relative strength, the "broke last year's high" list, sell the weak and buy the strong), `entry-exit-timing-skill` (buy 10 points above the low, sell 10 points below the top, the four profit questions, when in doubt stay out)
+- **Position, discipline and triage** (3 cards): `twelve-trading-rules-skill` (the twelve trading rules and capital management), `pyramid-scaling` (scale in with decreasing size, 100→50→30→20→10), `failure-mode-triage-skill` (the three fatal errors plus 35 verified failure modes)
+- **News, workflow and portfolio care** (3 cards): `news-discounting` (how news is already priced in), `tape-review-workflow` (do not watch the tape, three chart layers, divide volume by shares outstanding), `portfolio-annual-checkup` (annual portfolio checkup)
 
-Every card is structured in six sections — R / I / A1 / A2 / E / B: quotations, restatement, in-book cases, future trigger scenarios, executable steps, boundaries and blind spots.
+The full definition of every card (trigger intents, keywords, dependencies, destination) lives in [`bundle/verified.yaml`](./bundle/verified.yaml); the dependency graph and loading order are in [`INDEX.md`](./INDEX.md).
 
 ## Two packaging modes: single and pack
 
@@ -42,12 +40,14 @@ The same 12 capability cards are compiled twice, at two granularities. The conte
 The 7 cards promoted to standalone skills in the pack:
 
 - `trend-judgment-skill` — trend judgment
-- `support-resistance-stops-skill` — support/resistance review and the stop system
-- `accumulation-distribution-skill` — accumulation vs distribution
-- `strength-based-selection-skill` — relative strength and selection
+- `support-resistance-stops-skill` — support/resistance review and stops
+- `accumulation-distribution-skill` — accumulation/distribution detection
+- `strength-based-selection-skill` — relative strength and stock selection
 - `twelve-trading-rules-skill` — the twelve rules and capital management
-- `entry-exit-timing-skill` — entry/exit levels and timing
+- `entry-exit-timing-skill` — entry and exit timing
 - `failure-mode-triage-skill` — failure-mode triage checklist
+
+The 5 that stay in the router: `seven-action-zones`, `pyramid-scaling`, `news-discounting`, `tape-review-workflow`, `portfolio-annual-checkup`.
 
 ### Which one to install
 
@@ -56,100 +56,124 @@ Pick by the way you work, and **install only one**:
 | How you work | Recommended | Why |
 |---|---|---|
 | You use DSH / Codex / Claude Code with a skills directory and want a clean list | single | Takes 1 slot, loses no capabilities |
-| Your daily questions concentrate on "which way is the trend / where is my stop / accumulation or distribution / which stock is strongest / how much to buy / should I chase / where did I go wrong" | pack | Those are exactly the promoted standalone skills, matched directly |
+| Your daily questions concentrate on "which way is this trending / where is my stop / is this accumulation or distribution / which stock do I buy / how much capital to commit / can I buy now / where did I go wrong" | pack | Those are exactly the promoted standalone skills, matched directly |
 | You distribute to several agents or teammates who pick what they need | pack | They can install only the standalone skills they want |
 | You want to install once and maintain one directory | single | Upgrades replace a single directory |
 
 > Both builds come from the same bundle and carry identical capabilities. **Installing both will double-trigger**, so pick one.
 
-## Examples
+## Worked examples
 
-### Example 1: four months sideways — accumulation or distribution?
-
-**User question**
-
-"This stock has been stuck between 18 and 21 for four months. Volume spikes sometimes, and they raised the dividend in the middle. Is smart money accumulating or dumping?"
-
-**How the skill reasons**
-
-- Enter `accumulation-distribution`: the first step is not absolute volume but the range's cumulative volume divided by shares outstanding, giving turnover counts — the book's own benchmark is that volume must be read against shares issued; U.S. Steel's 5 million shares "needed more than a million shares to change hands" before any major move
-- Count round trips: the book counts swings of 5 points or more; 10–20 round trips inside one range, or 15–20 turnovers of the float in that range, is what makes the signal strong
-- Check events: the book lists "heavy volume with rapid repeated rallies and breaks, plus higher dividends, extra dividends and extra rights" as the most reliable distribution signals — the dividend raise here is **bait evidence**, not a bullish reason
-- Fix location: leaders distribute within 5–10 points below the top, laggards 20–30 points below the high; the same dead quiet means buying power exhausted near a top, and accumulation only near a bottom
-- Stop rule: when top deadness and bottom deadness cannot be told apart, output "location undetermined" and never default to safe
-
-**Sample answer**
-
-> Do not call it accumulation yet. Three dimensions each need a number: turnover — cumulative range volume divided by shares outstanding, so you know how many times the float changed hands; round trips — how many 5-point-equivalent swings you counted; and time — whether four months is long or short relative to this stock's own history. The book's strong-signal thresholds are 15–20 turnovers of the float or 10–20 swings of 5 points or more inside the range. If you are far below both, this is "no signal" — neither accumulation nor distribution.
->
-> Record the dividend raise separately: the book puts "higher dividends, extra dividends, extra rights" directly on its list of the most reliable distribution signals. It is bait, not a reason to be bullish.
->
-> One conversion is mandatory: the "5 points" and "15–20 times" are 1920s fixed-point parameters. Applying them directly to an 18–21 range produces nonsense. Rebuild the swing threshold from this stock's ATR or percentage range, and state the conversion basis in your conclusion — that conversion is the compiler's patch, not the book's content.
->
-> Finally, even if all three dimensions qualify, the conclusion can only be written as an "evidence-strength assessment", never as "smart money is dumping". The book's premise that volume and price cannot be faked does not strictly hold under today's algorithmic slicing and high-frequency market making. If location cannot be determined, stop there and wait for the breakout to define the range's character.
-
-### Example 2: a fresh new high — should I chase, and where does the stop go?
+### Example 1: seven months sideways — accumulation or distribution?
 
 **User question**
 
-"The stock broke out of a two-year box and made a new high. I chased it. Where should my stop be — and was chasing a new high too risky?"
+"This stock has been stuck between 18 and 22 for seven months. Last week it broke 22 on heavy volume and fell straight back. Accumulation or distribution?"
 
 **How the skill reasons**
 
-- `trend-judgment`: first ask which new high this is — the book states that buying "when a stock makes a new high a second time is always safer than buying at its first new high"; then check whether the range before the breakout was accumulation or distribution (an upside break from an accumulation range is more credible), and note that the longer the gap between two entries into a new range, the greater the force
-- The false-breakout branch of `trend-judgment`: if price falls back below the old high within a few days, mark it "suspected false breakout / distribution unfinished" — this step is never skipped
-- `support-resistance-stops`: anchor the stop to structure — for longs, 3 points below the old bottom/support; for shorts, 1–3 points above the old top. The stop order is G.T.C. and goes in together with the entry
-- The normalization band in `support-resistance-stops`: the book's cases land between 2.6% and 10% in percentage terms; the compiler's default band is 3%–6% calibrated to ATR, and the conversion basis must be stated
-- Time confirmation: a key level must hold "for several weeks" to count as valid; before that, direction is only "preliminary" and confidence caps at "medium"
+- The entry runs its stop conditions first: this asks for a range assessment, not a price prediction, so it proceeds; the question enters `accumulation-distribution-skill`
+- Volume must be divided by shares outstanding: the unit of reading is turnover, not absolute share count — the book anchors this on U.S. Steel's 5 million shares and "more than a million shares must change hands before a big move"
+- Range counting: a round trip of 5 points or more counts once; 10–20 round trips without breaking the range is accumulation or distribution, and location decides which
+- Location decides the label: narrow range and small volume near the lows leans accumulation; heavy volume churning near the highs leans distribution — the `seven-action-zones` card is pulled in through `also_read`
+- Two ending signals close the read: a single week of record volume plus great news marks the end of a move; shrinking volume at the low means selling pressure is exhausted
 
-**Sample answer**
+**Example answer**
 
-> On "was chasing a new high too risky": the book takes the opposite view — a second new high is safer than the first, because the first tends to meet heavy selling while by the second the supply has been absorbed. So the question is not whether to chase a new high, but which new high this is.
->
-> Stop placement: anchor it to structure, not to a round percentage. For a long, it sits below the support or old bottom; the book's raw parameter is 3 points. Converted to your stock, the book's cases land between 2.6% and 10%, and the compiler's suggested default band is 3%–6% calibrated to ATR. Neither number is a modern parameter from the book — write down which one you use.
->
-> Two iron rules carry over verbatim: the stop order goes in at the same time as the entry (G.T.C., good till cancelled), and once filled it is never cancelled or widened — the book says that when you want to risk more than planned, "99% of the time you are wrong".
->
-> Keep one branch open: if price falls back below the old high within a few days, that is not a pullback but a "suspected false breakout / distribution unfinished" signal, and the correct action is to check the distribution evidence, not to average down. Also, a breakout only counts once it has held for several weeks; the day of the break is preliminary confirmation at best.
->
-> One boundary to close with: every case in the book is a retrospective reading of a completed move, with no failure-rate statistics and no out-of-sample test. This workflow gives you a checkable evidence chain and explicit stop rules — not a win-rate promise.
+> Do not settle this from "seven months sideways" alone — split it into the book's three dimensions. First, divide volume by shares outstanding: what percentage of the float traded per week over these seven months, and is that high or low against this stock's own accumulation and distribution periods. Second, count round trips: 18–22 is a 4-point range, and the book's counting rule only credits moves of 5 points or more, so the range itself is narrow — that points to narrow-range accumulation rather than wide-range distribution, but only if volume shrank while the price was low. Third, check location: is this stock nearer its multi-year old high or old low, and which of the seven action zones is it in? That alone decides whether "narrow range, small volume" reads as accumulation or as "stalling at the top" reading as distribution. Finally, the break of 22 that fell back is either a test of overhead supply or a trap; the difference is the volume on the way down — shrinking volume favours the first, expanding volume the second. Note the book's premise that "the tape cannot be faked" does not strictly hold in a modern market with wash trading and algorithmic flow, so what you get here is an evidence-strength assessment, not a verdict. If you are going to act, location and the stop belong to `support-resistance-stops-skill` — do not set the trade here.
+
+### Example 2: bought at 104, old low is 96 — where does the stop go?
+
+**User question**
+
+"I bought at 104. The previous low is 96. Where do I put the stop, and what do I do once I have a profit?"
+
+**How the skill reasons**
+
+- The entry resolves the mixed intent: this is about a level and a stop, so the primary card is `support-resistance-stops-skill`; trend direction is read through `also_read` into `trend-judgment-skill`
+- Review old levels before discussing the stop: pull the multi-year chart, mark every historical accumulation and distribution zone and every old top and bottom; repeated touches at the same price are counted, with a tolerance of ±1–2 points
+- Where the order goes: on the long side, 3 points below the old bottom (1–2 points for week-long operations; the combined system is 1–3 points); the short side is the mirror, 1–3 points above the old top
+- Order type: it must be G.T.C. (good till cancelled), placed together with the entry, not added afterwards
+- Two iron rules: never cancel the stop, never widen it — when you want to take a bigger loss, the book's verdict is that you are wrong 99% of the time
+- Profit handling: move the stop to break-even first, then trail it in steps; never let a winning position turn into a loser
+- Normalization caveat: 3 points is a 1920s price scale and will distort if copied into a modern market; it must be converted by volatility, and that conversion is the compiler's patch, not the book's content
+
+**Example answer**
+
+> Anchor the stop on structure, not on how much you can bear. The old bottom is 96, so the book's long-side rule puts the stop 3 points below it, around 93 — but that 3-point figure is a 1920s dollar scale, and carrying it onto today's price requires normalization. The sturdier approach is to express it as "about one ATR, or a fixed percentage, below the old bottom", so that the 93 area corresponds to a sensible modern width, and to write the convention down before you place the order. The order type matters just as much: place the G.T.C. stop at the same time as the entry, not as a manual sell "if it breaks", because failing to place a stop order is one of the three fatal errors in the book. Once you have a profit, follow rule four: move the stop to cost first (break-even), then trail it in steps as the trend continues. Two things are non-negotiable — do not cancel, do not widen; the moment you want to widen is usually the moment your read is already wrong. One more point: the stop only settles how much you lose if you are wrong. Whether 104 was the right place to buy is a location question — go back to the trend card and the seven action zones and confirm it once more.
 
 ## How these skills were generated
 
-These skills were produced with the **[cangjie-skill](https://github.com/kangarooking/cangjie-skill)** RIA-TV++ pipeline, in six stages:
+This skill pack was produced with the RIA-TV++ pipeline from **[cangjie-skill](https://github.com/kangarooking/cangjie-skill)**, in six stages:
 
-1. **Whole-book comprehension (Adler analysis)** — apply Mortimer Adler's analytical reading method to the book: structure, interpretation, criticism, application
-2. **Parallel extraction** — several specialized extractors (frameworks, principles, cases, counter-examples, terminology) mine candidate methodology units from the source text
-3. **Triple verification** — every candidate must pass three checks: at least two independent in-book supports (cross-domain), the ability to answer questions the book never explicitly addresses (predictive power), and not being common sense (distinctiveness)
-4. **RIA++ construction** — structure each unit along R (quotation) / I (restatement in own words) / A1 (in-book case) / A2 (future trigger scenario) / E (executable steps) / B (boundaries and blind spots)
-5. **Zettelkasten linking** — map dependencies, contrasts and combinations between cards, producing the capability index and routing table
-6. **Trigger and output testing** — write trigger blind tests (including decoy questions: fire when they should, stay silent when they should not) and output evaluation scenarios for every card; failing cards go back for rework and are re-verified afterwards
+1. **Whole-book understanding (Adler analysis)** — Mortimer Adler's analytical reading method, applied in four steps: structure, interpretation, criticism, application. Output: [`BOOK_OVERVIEW.md`](./BOOK_OVERVIEW.md)
+2. **Parallel extraction** — several specialized extractors (frameworks, principles, cases, counter-examples, glossary) run at once to pull candidate methodology units out of the text; this book yielded 381 candidates
+3. **Triple verification** — every candidate must pass three tests: at least two independent corroborations inside the book (cross-domain), the ability to answer a new question the book never states (predictive power), and not being common sense (distinctiveness). Of the 381 candidates, 333 passed, 40 were demoted to the reference domain, 9 were flagged for review and 1 was rejected — see [`verified.md`](./verified.md)
+4. **RIA++ construction** — structure each unit along six dimensions: R (verbatim quotation), I (restatement in our own words), A1 (case from the book), A2 (future trigger scenario), E (executable steps), B (boundaries and blind spots). The 381 units were merged into 12 capabilities
+5. **Zettelkasten linking** — identify dependencies, contrasts and combinations between cards, then generate the capability index and router table, which is the `also_read` field in [`bundle/verified.yaml`](./bundle/verified.yaml)
+6. **Trigger and output testing** — design blind trigger tests for every entry (including decoy prompts: trigger when it should, stay silent when it should not) plus output-evaluation scenarios; failing cards go back for rework and are regression-tested afterwards
 
-## Repository layout
+Two quirks of this book shaped the distillation. First, a version-date mismatch: the cover subtitle points at 1929–1935, while the body's data and cases stop in early 1923, so all quotations follow the body's own frame. Second, the fixed point-based parameters (3-point stops, 5–7 point reactions, 2–3 million share days) are tied to 1920s price levels and must be normalized by volatility before reuse in a modern market — a caveat written into every card's boundary section.
+
+## Testing and verification
+
+This repository ships the test material from the generation process: `evals/` holds the trigger cases for all 9 entries and the item-by-item scoring, and [`evals/test-results.md`](./evals/test-results.md) records the failures and the fixes, not only the passes.
+
+- **Blind trigger tests**: 65 cases across 9 entries, 64 passed (98.5%); 17 of them were decoys (should_not_trigger) with zero false triggers
+- **Method**: 3 clean sub-agent blind tests plus scoring by the main process, with no expected answers supplied to the testers
+- **The one failure**: `gann-trend-theory-skill::should_trigger-03` (a combined trend-plus-timing prompt) was routed to `trend-judgment-skill` by the blind test; the fix added that combined scenario to the single entry's description, without touching the expected answer
+- **Output tests**: 7 of the 9 entries have a standalone representative-task output test; the entry and the router are covered through routing behaviour
+- **Known gaps** (recorded as they are): the standalone output test for `strength-based-selection-skill` was done late (PASS-with-notes, 5 fixes); the train/validation split in `run_trigger_evals.py` was not executed; cross-model re-testing was not done
+
+## Repository structure
 
 ```text
 gann-trend-theory-skill/
-├── README.md                      ← Chinese version
-├── README.en.md                   ← you are reading this
-├── LICENSE                        ← MIT
-├── BOOK_OVERVIEW.md               ← whole-book comprehension (Adler four-step, stage 0 output)
-├── verified.md                    ← triple-verification conclusions for the 12 capability units
-├── single/                        ← single-entry build
+├── README.md                          ← Chinese version
+├── README.en.md                       ← you are here
+├── LICENSE                            ← MIT
+├── BOOK_OVERVIEW.md                   ← whole-book understanding (Adler, stage 0)
+├── verified.md                        ← triple-verification verdicts for 381 candidate units
+├── INDEX.md                           ← skill map: destinations, dependencies, loading order
+├── bundle/                            ← canonical source: definitions + cards + book reference
+│   ├── verified.yaml                  ← canonical definition of the 12 capabilities
+│   ├── cards/                         ← canonical copies of the 12 capability cards
+│   │   ├── trend-judgment-skill.md
+│   │   ├── support-resistance-stops-skill.md
+│   │   ├── accumulation-distribution-skill.md
+│   │   ├── seven-action-zones-skill.md
+│   │   ├── strength-based-selection-skill.md
+│   │   ├── twelve-trading-rules-skill.md
+│   │   ├── pyramid-scaling-skill.md
+│   │   ├── entry-exit-timing-skill.md
+│   │   ├── news-discounting-skill.md
+│   │   ├── tape-review-workflow-skill.md
+│   │   ├── failure-mode-triage-skill.md
+│   │   └── portfolio-annual-checkup-skill.md
+│   └── book/
+│       ├── overview.md                ← whole-book overview
+│       └── glossary.md                ← glossary
+├── single/                            ← single-entry build
 │   └── gann-trend-theory-skill/
-│       ├── SKILL.md               ← entry: triggers + routing table + loading rules
-│       ├── BUILD_MANIFEST.json    ← build manifest and file hashes
+│       ├── SKILL.md                   ← entry: triggers + router table + loading rules
+│       ├── BUILD_MANIFEST.json        ← build manifest and file hashes
 │       └── references/
-│           ├── overview.md        ← whole-book overview
-│           ├── capability-index.md  ← full intent and keyword index
-│           ├── cheatsheet.md      ← decision-rule quick reference
-│           ├── glossary.md        ← glossary
-│           └── capabilities/      ← 12 capability cards
-├── pack/                          ← multi-entry build (compact pack)
+│           ├── overview.md
+│           ├── capability-index.md    ← full intent and keyword index
+│           ├── cheatsheet.md          ← decision-rule quick reference
+│           ├── glossary.md
+│           └── capabilities/          ← the 12 capability cards (same names as bundle/cards)
+├── pack/                              ← multi-entry build (compact pack)
 │   ├── BUILD_MANIFEST.json
-│   ├── capability-destinations.json
+│   ├── capability-destinations.json   ← destination of each of the 12 capabilities
 │   ├── gann-trend-theory-skill-router/
-│   │   ├── SKILL.md               ← source router entry
-│   │   └── references/            ← 12 cards + indexes, called by the router
+│   │   ├── SKILL.md                   ← source router entry
+│   │   └── references/
+│   │       ├── overview.md
+│   │       ├── capability-index.md
+│   │       ├── cheatsheet.md
+│   │       ├── glossary.md
+│   │       └── capabilities/          ← the 12 cards, called internally by the router
 │   ├── trend-judgment-skill/
 │   │   └── SKILL.md
 │   ├── support-resistance-stops-skill/
@@ -164,6 +188,17 @@ gann-trend-theory-skill/
 │   │   └── SKILL.md
 │   └── failure-mode-triage-skill/
 │       └── SKILL.md
+└── evals/                             ← trigger and output test material
+    ├── test-results.md                ← item-by-item scoring and rework log
+    ├── gann-trend-theory-skill.json
+    ├── gann-trend-theory-skill-router.json
+    ├── trend-judgment-skill.json
+    ├── support-resistance-stops-skill.json
+    ├── accumulation-distribution-skill.json
+    ├── strength-based-selection-skill.json
+    ├── twelve-trading-rules-skill.json
+    ├── entry-exit-timing-skill.json
+    └── failure-mode-triage-skill.json
 ```
 
 ## Usage
@@ -215,20 +250,19 @@ $dest = "$env:USERPROFILE\.agents\skills"
 
 ### How to verify the install
 
-Ask: "This stock has been sideways for four months — is it accumulation or distribution?" If the agent asks for shares outstanding and starts computing turnover counts and range round trips instead of jumping to a verdict, the install works. With the single build it reads the entry first and then routes to a card; with the pack build the matching capability is hit directly.
+Ask: "I bought at 104 and the old low is 96 — where does the stop go?" If the agent enters the stop-anchoring and G.T.C. order flow instead of giving generic technical commentary, the install works. With the single build it reads the entry first and then routes to a card; with the pack build the matching capability is hit directly.
 
 ## Sources
 
-- *Gann Trend Theory* by William D. Gann
-- Distilled from the whole book, producing 12 capability cards
+- *New Stock Trend Detector* by William D. Gann
 
 ## Notice
 
 This repository publishes distilled skills, indexes and rule quick references only. It contains no PDF, EPUB, OCR files, screenshots or full-book transcripts of the source book. Quotations that appear in the capability cards serve solely to attribute methodology and keep the material auditable.
 
-All numeric criteria in the book (3-point stops, 5-point swings, 15–20 turnovers, 2–3 million share climax days, the 100→50→30→20→10 scaling sequence, etc.) are bound to 1920s price levels and share counts, without statistical backtesting. They must be normalized by volatility and float before use in modern markets, and the conversion basis must be stated in the output; the conversion itself is the compiler's patch, not the book's content. The book's time-cycle algorithm was explicitly left unpublished by the author, and this repository invents no cycle numbers. Nothing in this repository is investment advice.
+All numeric criteria in the book (3-point stops, 5–7 point reactions, 10–20 round trips in a range, 2–3 million share days, etc.) are case- and experience-based rules from 1920s market conditions without statistical backtesting, and they cannot be applied to a modern market as they stand; normalize them by volatility and float, and state the convention you use. Nothing in this repository is investment advice.
+
 
 ## License
 
 [MIT](./LICENSE)
-

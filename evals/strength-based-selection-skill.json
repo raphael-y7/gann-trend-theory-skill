@@ -1,0 +1,55 @@
+{
+  "skill": "strength-based-selection-skill",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "这里有20只候选股，帮我按强弱排序挑出最强的5只",
+      "expected_behavior": "做横截面相对强度排序并给依据",
+      "notes": "正面：批量筛选"
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "想做空，选哪类票比较安全",
+      "expected_behavior": "按低价深跌+大流通盘口径给做空筛选条件",
+      "notes": "正面：做空筛选"
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "这只票比大盘强还是弱，要不要换仓",
+      "expected_behavior": "按相对强度判据（大盘跌它不跌/先见底后涨）回答",
+      "notes": "正面：相对强度"
+    },
+    {
+      "id": "should_trigger-04",
+      "type": "should_trigger",
+      "prompt": "帮我按突破52周新高筛一批年度领涨候选",
+      "expected_behavior": "按突破上年高点名单法筛选，并声明原书只给名单无胜率",
+      "notes": "正面：动量名单"
+    },
+    {
+      "id": "should_not_trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这只票现在能不能买，什么价位进",
+      "expected_behavior": "应由 entry-exit-timing-skill 处理",
+      "notes": "跨 skill 混淆：择时归属"
+    },
+    {
+      "id": "should_not_trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "我的仓位怎么分配到这几只票上",
+      "expected_behavior": "应由 twelve-trading-rules-skill 处理",
+      "notes": "跨 skill 混淆：仓位归属"
+    },
+    {
+      "id": "edge_case-01",
+      "type": "edge_case",
+      "prompt": "新股上市破发了，能不能抄底",
+      "expected_behavior": "按新股不碰规则（发行即买需多年保本）给出警示",
+      "notes": "边界：新股陷阱"
+    }
+  ]
+}
