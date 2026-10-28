@@ -135,6 +135,14 @@ gann-trend-theory-skill/
 ├── BOOK_OVERVIEW.md                   ← whole-book understanding (Adler, stage 0)
 ├── verified.md                        ← triple-verification verdicts for 381 candidate units
 ├── INDEX.md                           ← skill map: destinations, dependencies, loading order
+├── TEST_SUMMARY.md                    ← stage 4 stress-test summary (case counts + blind-test results + gaps)
+├── CANGJIE_ADAPTATION.md              ← cangjie adaptation note (text state / distillation goals / evidence rules / limits)
+├── candidates/                        ← stage 1 extracted candidate units (381 in total)
+│   ├── framework.md                   ← 38 framework candidates
+│   ├── principles.md                  ← 136 principle candidates
+│   ├── cases.md                       ← 87 case candidates
+│   ├── counter-examples.md            ← 37 counter-example candidates
+│   └── glossary.md                    ← 83 glossary candidates
 ├── bundle/                            ← canonical source: definitions + cards + book reference
 │   ├── verified.yaml                  ← canonical definition of the 12 capabilities
 │   ├── cards/                         ← canonical copies of the 12 capability cards
@@ -157,37 +165,70 @@ gann-trend-theory-skill/
 │   └── gann-trend-theory-skill/
 │       ├── SKILL.md                   ← entry: triggers + router table + loading rules
 │       ├── BUILD_MANIFEST.json        ← build manifest and file hashes
+│       ├── test-prompts.json          ← trigger and edge cases for this entry (7)
 │       └── references/
 │           ├── overview.md
 │           ├── capability-index.md    ← full intent and keyword index
 │           ├── cheatsheet.md          ← decision-rule quick reference
 │           ├── glossary.md
 │           └── capabilities/          ← the 12 capability cards (same names as bundle/cards)
+│               ├── trend-judgment-skill.md
+│               ├── support-resistance-stops-skill.md
+│               ├── accumulation-distribution-skill.md
+│               ├── seven-action-zones.md
+│               ├── strength-based-selection-skill.md
+│               ├── twelve-trading-rules-skill.md
+│               ├── pyramid-scaling.md
+│               ├── entry-exit-timing-skill.md
+│               ├── news-discounting.md
+│               ├── tape-review-workflow.md
+│               ├── failure-mode-triage-skill.md
+│               └── portfolio-annual-checkup.md
 ├── pack/                              ← multi-entry build (compact pack)
 │   ├── BUILD_MANIFEST.json
 │   ├── capability-destinations.json   ← destination of each of the 12 capabilities
 │   ├── gann-trend-theory-skill-router/
 │   │   ├── SKILL.md                   ← source router entry
+│   │   ├── test-prompts.json          ← trigger and edge cases for the router (8)
 │   │   └── references/
 │   │       ├── overview.md
 │   │       ├── capability-index.md
 │   │       ├── cheatsheet.md
 │   │       ├── glossary.md
 │   │       └── capabilities/          ← the 12 cards, called internally by the router
+│   │           ├── trend-judgment-skill.md
+│   │           ├── support-resistance-stops-skill.md
+│   │           ├── accumulation-distribution-skill.md
+│   │           ├── seven-action-zones.md
+│   │           ├── strength-based-selection-skill.md
+│   │           ├── twelve-trading-rules-skill.md
+│   │           ├── pyramid-scaling.md
+│   │           ├── entry-exit-timing-skill.md
+│   │           ├── news-discounting.md
+│   │           ├── tape-review-workflow.md
+│   │           ├── failure-mode-triage-skill.md
+│   │           └── portfolio-annual-checkup.md
 │   ├── trend-judgment-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   ├── support-resistance-stops-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   ├── accumulation-distribution-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   ├── strength-based-selection-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   ├── twelve-trading-rules-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   ├── entry-exit-timing-skill/
-│   │   └── SKILL.md
+│   │   ├── SKILL.md
+│   │   └── test-prompts.json
 │   └── failure-mode-triage-skill/
-│       └── SKILL.md
+│       ├── SKILL.md
+│       └── test-prompts.json
 └── evals/                             ← trigger and output test material
     ├── test-results.md                ← item-by-item scoring and rework log
     ├── gann-trend-theory-skill.json

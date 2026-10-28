@@ -1,0 +1,62 @@
+{
+  "skill": "gann-trend-theory-skill-router",
+  "version": "1.0.0",
+  "test_cases": [
+    {
+      "id": "should_trigger-01",
+      "type": "should_trigger",
+      "prompt": "现在大盘是不是过热了，能不能开始抄底",
+      "expected_behavior": "路由到七个行动区域能力卡（seven-action-zones）做位置判别",
+      "notes": "路由专属：七区能力未晋级"
+    },
+    {
+      "id": "should_trigger-02",
+      "type": "should_trigger",
+      "prompt": "已经浮盈30%了，想逐档加仓，怎么加",
+      "expected_behavior": "路由到金字塔式加码能力卡（pyramid-scaling）",
+      "notes": "路由专属：加码能力未晋级"
+    },
+    {
+      "id": "should_trigger-03",
+      "type": "should_trigger",
+      "prompt": "公司突然宣布增发新股，这是利好还是利空",
+      "expected_behavior": "路由到消息贴现能力卡（news-discounting）",
+      "notes": "路由专属：消息贴现未晋级"
+    },
+    {
+      "id": "should_trigger-04",
+      "type": "should_trigger",
+      "prompt": "我想建立一套不盯盘的看盘记录流程，每天该记什么",
+      "expected_behavior": "路由到看盘复盘工作流能力卡（tape-review-workflow）",
+      "notes": "路由专属：复盘工作流未晋级"
+    },
+    {
+      "id": "should_trigger-05",
+      "type": "should_trigger",
+      "prompt": "帮我做一次年度持仓体检，看看哪些该清掉",
+      "expected_behavior": "路由到持仓年度体检能力卡（portfolio-annual-checkup）",
+      "notes": "路由专属：体检能力未晋级"
+    },
+    {
+      "id": "should_not_trigger-01",
+      "type": "should_not_trigger",
+      "prompt": "这只票止损设在哪比较合适",
+      "expected_behavior": "应由已晋级的 support-resistance-stops-skill 处理，路由入口不应接管",
+      "notes": "近邻负例：晋级 Skill 与路由入口互斥"
+    },
+    {
+      "id": "should_not_trigger-02",
+      "type": "should_not_trigger",
+      "prompt": "帮我预测下个月大盘会跌到多少点",
+      "expected_behavior": "触发判停：不做具体点位预测",
+      "notes": "诱饵：越界请求"
+    },
+    {
+      "id": "edge_case-01",
+      "type": "edge_case",
+      "prompt": "吸筹和派发这两个词是什么意思？",
+      "expected_behavior": "术语查询走 references/glossary.md，不加载能力卡",
+      "notes": "边界：术语释义"
+    }
+  ]
+}
