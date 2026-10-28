@@ -6,7 +6,7 @@
 ## 测试范围
 
 - **skill 数量**：9 个入口。1 个 single 入口（`gann-trend-theory-skill`）、1 个 pack 来源路由入口（`gann-trend-theory-skill-router`）、7 个 pack 晋级独立 skill（trend-judgment、support-resistance-stops、accumulation-distribution、strength-based-selection、twelve-trading-rules、entry-exit-timing、failure-mode-triage）。
-- **test-prompts 文件**：9 份，共 **65 条用例**。每份随所属 skill 目录发布为 `test-prompts.json`；`evals/` 下另保留同名副本（触发用例原始集合）。
+- **test-prompts 文件**：9 份，共 **65 条用例**。每份随所属 skill 目录发布为 `test-prompts.json`。
 - **覆盖类型**（按用例文件里的 `type` 字段统计）：
 
 | 类型 | 条数 | 说明 |
@@ -14,7 +14,7 @@
 | `should_trigger` | 36 | 该触发时必须触发，含复合问题（判势＋择时、吸筹＋止损、排障＋资金管理） |
 | `should_not_trigger` | 18 | 诱饵题：无关领域（写脚本）、越界请求（预测点位）等，必须沉默 |
 | `edge_case` | 11 | 元问题与已知来源缺口（时间周期算法原书不公开、成书年代口径） |
-| `output_case` | 0 | 用例 JSON 中**不存在**该 type；输出测试不走 JSON，按 `evals/test-results.md` 的「输出测试」列逐卡记录 |
+| `output_case` | 0 | 用例 JSON 中**不存在**该 type；输出测试不走 JSON，按 [`test-results.md`](./test-results.md) 的「输出测试」列逐卡记录 |
 
 逐入口用例分布：
 
@@ -32,13 +32,13 @@
 
 ## 结构检查
 
-以下为对仓库当前文件的实测结果（2026-10-28 复核）：
+以下为对仓库当前文件的实测结果（2026-10-29 复核）：
 
-- **JSON 可解析性**：全仓 21 个 JSON 全部可解析，0 失败。构成为 9 份 `test-prompts.json`、9 份 `evals/*.json` 触发用例、`pack/BUILD_MANIFEST.json`、`pack/capability-destinations.json`、`single/gann-trend-theory-skill/BUILD_MANIFEST.json`。
+- **JSON 可解析性**：全仓 12 个 JSON 全部可解析，0 失败。构成为 9 份 `test-prompts.json`、`pack/BUILD_MANIFEST.json`、`pack/capability-destinations.json`、`single/gann-trend-theory-skill/BUILD_MANIFEST.json`。
 - **frontmatter**：9 份 `SKILL.md` 全部带 YAML frontmatter，`name` 字段与所在目录名一致（含 `-router` 后缀）。
 - **六段完整性**：`bundle/cards/` 下 12 张能力卡均含 R（原文）/ I（自述）/ A1（书中案例）/ A2（未来触发）/ E（执行步骤）/ B（边界）六段，无缺段；`single` 与 `pack` 的 `references/capabilities/` 为同名副本。
 - **用例自洽**：每份 `test-prompts.json` 的 `skill` 字段与其所在目录名一致；`id` 前缀与 `type` 字段一一对应（`should_trigger-NN` / `should_not_trigger-NN` / `edge_case-NN`）。
-- **一处原文笔误（已如实记录，未改动原文件）**：`evals/test-results.md` 正文写「诱饵（should_not_trigger）：共 17 条」，但其表格逐行相加为 18 条，用例文件实测也是 18 条。以 18 条为准，正文的 17 应为笔误。
+- **一处原文笔误（已如实记录，未改动原文件）**：[`test-results.md`](./test-results.md) 正文写「诱饵（should_not_trigger）：共 17 条」，但其表格逐行相加为 18 条，用例文件实测也是 18 条。以 18 条为准，正文的 17 应为笔误。
 
 ## 结果
 

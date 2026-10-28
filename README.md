@@ -117,7 +117,7 @@ pack 里被晋级为独立 skill 的 7 张卡：
 
 ## 测试与验证
 
-本仓库把生成过程的测试材料一起发布：`evals/` 下是 9 个入口的触发用例与逐项评分结果，[`evals/test-results.md`](./evals/test-results.md) 记录了失败与修复的完整过程，不是只留通过记录。
+本仓库把生成过程的测试材料一起发布：9 个入口的触发用例随各 skill 目录发布为 `test-prompts.json`，[`test-results.md`](./test-results.md) 记录了逐入口评分与失败修复的完整过程，不是只留通过记录。
 
 - **触发盲测**：9 个入口共 65 条用例，通过 64 条（98.5%）；其中诱饵（should_not_trigger）17 条，零误触发
 - **方法**：3 个干净 sub-agent 盲测 ＋ 主流程判卷，判卷时不提供预期答案
@@ -129,117 +129,31 @@ pack 里被晋级为独立 skill 的 7 张卡：
 
 ```text
 gann-trend-theory-skill/
-├── README.md                          ← 你正在看的
-├── README.en.md                       ← English version
-├── LICENSE                            ← MIT
-├── BOOK_OVERVIEW.md                   ← 整书理解（Adler 四步拆解，阶段 0 产出）
-├── verified.md                        ← 381 个候选单元的三重验证结论
-├── INDEX.md                           ← skill 地图：12 个能力的去向、依赖与加载顺序
-├── TEST_SUMMARY.md                    ← 阶段 4 压力测试摘要（用例统计＋盲测结果＋缺口）
-├── CANGJIE_ADAPTATION.md              ← 仓颉适配说明（文本状态/蒸馏目标/证据规则/使用边界）
-├── candidates/                        ← 阶段 1 五路提取的候选单元（共 381 个）
-│   ├── framework.md                   ← 框架候选 38 个
-│   ├── principles.md                  ← 原则/口径候选 136 个
-│   ├── cases.md                       ← 案例候选 87 个
-│   ├── counter-examples.md            ← 反例候选 37 个
-│   └── glossary.md                    ← 术语候选 83 个
-├── bundle/                            ← 规范源：能力定义 + 能力卡 + 整书参考
-│   ├── verified.yaml                  ← 12 个能力的规范定义（意图/关键词/also_read/去向）
-│   ├── cards/                         ← 12 张能力卡规范副本
-│   │   ├── trend-judgment-skill.md
-│   │   ├── support-resistance-stops-skill.md
-│   │   ├── accumulation-distribution-skill.md
-│   │   ├── seven-action-zones-skill.md
-│   │   ├── strength-based-selection-skill.md
-│   │   ├── twelve-trading-rules-skill.md
-│   │   ├── pyramid-scaling-skill.md
-│   │   ├── entry-exit-timing-skill.md
-│   │   ├── news-discounting-skill.md
-│   │   ├── tape-review-workflow-skill.md
-│   │   ├── failure-mode-triage-skill.md
-│   │   └── portfolio-annual-checkup-skill.md
-│   └── book/
-│       ├── overview.md                ← 整书概览
-│       └── glossary.md                ← 术语表
-├── single/                            ← 单一入口模式
-│   └── gann-trend-theory-skill/
-│       ├── SKILL.md                   ← 入口：触发条件 + 路由表 + 加载规则
-│       ├── BUILD_MANIFEST.json        ← 编译清单与文件哈希
-│       ├── test-prompts.json          ← 本入口的触发与边界用例（7 条）
-│       └── references/
-│           ├── overview.md
-│           ├── capability-index.md    ← 完整意图与关键词索引
-│           ├── cheatsheet.md          ← 决策规则速查
-│           ├── glossary.md
-│           └── capabilities/          ← 12 张能力卡（与 bundle/cards 同名）
-│               ├── trend-judgment-skill.md
-│               ├── support-resistance-stops-skill.md
-│               ├── accumulation-distribution-skill.md
-│               ├── seven-action-zones.md
-│               ├── strength-based-selection-skill.md
-│               ├── twelve-trading-rules-skill.md
-│               ├── pyramid-scaling.md
-│               ├── entry-exit-timing-skill.md
-│               ├── news-discounting.md
-│               ├── tape-review-workflow.md
-│               ├── failure-mode-triage-skill.md
-│               └── portfolio-annual-checkup.md
-├── pack/                              ← 多入口模式（compact pack）
-│   ├── BUILD_MANIFEST.json
-│   ├── capability-destinations.json   ← 12 个能力各自的去向
-│   ├── gann-trend-theory-skill-router/
-│   │   ├── SKILL.md                   ← 来源路由入口
-│   │   ├── test-prompts.json          ← 路由入口的触发与边界用例（8 条）
-│   │   └── references/
-│   │       ├── overview.md
-│   │       ├── capability-index.md
-│   │       ├── cheatsheet.md
-│   │       ├── glossary.md
-│   │       └── capabilities/          ← 12 张能力卡，供 router 内部调用
-│   │           ├── trend-judgment-skill.md
-│   │           ├── support-resistance-stops-skill.md
-│   │           ├── accumulation-distribution-skill.md
-│   │           ├── seven-action-zones.md
-│   │           ├── strength-based-selection-skill.md
-│   │           ├── twelve-trading-rules-skill.md
-│   │           ├── pyramid-scaling.md
-│   │           ├── entry-exit-timing-skill.md
-│   │           ├── news-discounting.md
-│   │           ├── tape-review-workflow.md
-│   │           ├── failure-mode-triage-skill.md
-│   │           └── portfolio-annual-checkup.md
-│   ├── trend-judgment-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   ├── support-resistance-stops-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   ├── accumulation-distribution-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   ├── strength-based-selection-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   ├── twelve-trading-rules-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   ├── entry-exit-timing-skill/
-│   │   ├── SKILL.md
-│   │   └── test-prompts.json
-│   └── failure-mode-triage-skill/
-│       ├── SKILL.md
-│       └── test-prompts.json
-└── evals/                             ← 触发与输出测试材料
-    ├── test-results.md                ← 逐项评分与失败修复记录
-    ├── gann-trend-theory-skill.json
-    ├── gann-trend-theory-skill-router.json
-    ├── trend-judgment-skill.json
-    ├── support-resistance-stops-skill.json
-    ├── accumulation-distribution-skill.json
-    ├── strength-based-selection-skill.json
-    ├── twelve-trading-rules-skill.json
-    ├── entry-exit-timing-skill.json
-    └── failure-mode-triage-skill.json
+├── README.md              ← 你正在看的
+├── README.en.md           ← English version
+├── LICENSE                ← MIT
+├── BOOK_OVERVIEW.md       ← 阶段 0 产出：全书 Adler 分析
+├── INDEX.md               ← 阶段 3 产出：skill 总览 + 依赖关系
+├── verified.md            ← 通过三重验证的 333 个单元
+├── TEST_SUMMARY.md        ← 阶段 4 产出：压力测试摘要
+├── CANGJIE_ADAPTATION.md  ← 仓颉适配说明
+├── GITHUB_REPO.md         ← 仓库元数据
+├── test-results.md        ← 测试结果记录
+├── candidates/            ← 阶段 1 产出：原始候选池
+│   ├── frameworks.md      ← 框架与方法候选
+│   ├── principles.md      ← 原则 / 规则 / 计算候选
+│   ├── cases.md           ← 书中案例候选
+│   ├── counter-examples.md← 反例与边界候选
+│   └── glossary.md        ← 术语候选
+├── rejected/              ← 阶段 1.5 产出：被淘汰的单元 + 原因
+├── bundle/                ← 编译事实源
+│   ├── verified.yaml      ← 能力元数据、判据与去向
+│   ├── cards/             ← 能力卡源文件（六段结构）
+│   └── book/              ← overview.md + glossary.md
+├── single/                ← single 模式（1 个入口 + 全部能力卡）
+│   └── gann-trend-theory-skill/SKILL.md  ← 入口：触发 + 路由表 + 加载规则
+└── pack/                  ← pack 模式（1 个路由入口 + 7 个晋级 skill）
+    └── */SKILL.md         ← 8 个 skill，每个附带 test-prompts.json
 ```
 
 ## 如何使用

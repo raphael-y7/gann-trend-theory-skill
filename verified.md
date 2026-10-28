@@ -6,12 +6,14 @@
 
 | 候选域 | 单元数 | verified | reference | needs_review | rejected |
 |---|---|---|---|---|---|
-| 框架（candidates/framework.md） | 38 | 30 | 8 | 1 (f13) | 1 (f33) |
+| 框架（candidates/frameworks.md） | 38 | 30 | 6 | 1 (f13) | 1 (f33) |
 | 原则/口径（candidates/principles.md） | 136 | 112 | 24 | 0 | 0 |
 | 案例（candidates/cases.md） | 87 | 73 | 6 | 8 | 0 |
 | 反例（candidates/counter-examples.md） | 37 | 35 | 2 | 0 | 0 |
 | 术语（candidates/glossary.md） | 83 | 83（抽验36条全过，g49/g33 微修） | — | — | — |
-| **合计** | **381** | **333** | **40** | **9** | **1** |
+| **合计** | **381** | **333** | **38** | **9** | **1** |
+
+> 计数口径：f13（needs_review）与 f33（rejected）单独计列，不重复计入 reference 栏，故 reference 合计为 38，且 381 = 333 + 38 + 9 + 1。各域单元数与 `candidates/` 下实测条目数一致（38 / 136 / 87 / 37 / 83）。
 
 ## 能力级归并骨架（阶段 1.6 采纳版，12 个能力）
 
@@ -32,7 +34,7 @@
 | 11 | C11-failure-triage | failure-mode-triage-skill | 失败模式排障检查表 | F13 ← 35 条 verified 反例 | 反例35 |
 | 12 | C12-portfolio-checkup | portfolio-annual-checkup | 持仓年度体检（投资看护） | F15 | 框架2+原则9 |
 
-reference 类 40 项去向：期货专有 17 项 → 能力卡"参考域 R"段；7 项股票侧历史节奏/不可核查断言 → BOOK_OVERVIEW 第 5 节；术语→GLOSSARY；D 级轶事 6 项 → 卡片背景叙述。明细见 references.md。
+reference 类 38 项去向：期货专有 17 项 → 能力卡"参考域 R"段；7 项股票侧历史节奏/不可核查断言 → BOOK_OVERVIEW 第 5 节；术语→GLOSSARY；D 级轶事 6 项 → 卡片背景叙述。明细见 references.md。
 
 ## 抽查与质量记录
 
